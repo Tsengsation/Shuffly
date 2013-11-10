@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shuffly"
+            android:id="@+id/title"
+            android:textSize="56dp"
+            android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+            android:layout_marginTop="80dp" android:layout_gravity="center"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shuffle on Steroids"
+            android:id="@+id/textView" android:layout_centerHorizontal="true" android:layout_below="@+id/title"
+            android:layout_gravity="center"/>
+    <ToggleButton
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Toggle"
+            android:id="@+id/toggle"
+            android:checked="false"
+            android:textOff="Start" android:textOn="Stop"
+            android:layout_gravity="center" android:layout_marginTop="50dp"/>
+    <Button
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Magic!"
+            android:id="@+id/fx"
+            android:layout_centerHorizontal="true" android:layout_below="@+id/quit" android:layout_gravity="center"/>
+    <Button
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Huh?"
+            android:id="@+id/help"
+            android:layout_centerHorizontal="true" android:layout_below="@+id/toggle"
+            android:layout_alignLeft="@+id/toggle" android:layout_alignRight="@+id/toggle" android:clickable="false"
+            android:layout_gravity="center"/>
+    <Button
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Preferences"
+            android:id="@+id/prefs"
+            android:layout_alignLeft="@+id/toggle" android:layout_below="@+id/help"
+            android:layout_alignRight="@+id/toggle" android:layout_gravity="center"/>
+    <Button
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Reset Settings"
+            android:id="@+id/Reset" android:layout_gravity="center"/>
+    <Button
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="Quit"
+            android:id="@+id/quit"
+            android:layout_centerHorizontal="true" android:layout_below="@+id/prefs"
+            android:layout_alignLeft="@+id/toggle" android:layout_alignRight="@+id/toggle"
+            android:layout_gravity="center" android:visibility="gone"/>
+</LinearLayout>

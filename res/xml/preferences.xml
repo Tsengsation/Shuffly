@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:custom="http://schemas.android.com/apk/res-auto" >
+    <PreferenceCategory android:title="Sensitivity">
+        <com.lukehorvat.SeekBarDialogPreference
+                android:key="xRotThresh"
+                android:title="Pause Sensitivity"
+                android:dialogMessage="Adjust pause sensitivity."
+                android:defaultValue="45"
+                android:max="90"
+                custom:min="10"
+                custom:progressTextSuffix=""/>
+        <com.lukehorvat.SeekBarDialogPreference
+                android:key="yRotThresh"
+                android:title="Volume Sensitivity"
+                android:dialogMessage="Adjust volume sensitivity."
+                android:defaultValue="45"
+                android:max="90"
+                custom:min="10"
+                custom:progressTextSuffix=""/>
+        <com.lukehorvat.SeekBarDialogPreference
+                android:key="zRotThresh"
+                android:title="Song Change Sensitivity"
+                android:dialogMessage="Adjust song change sensitivity."
+                android:defaultValue="45"
+                android:max="90"
+                custom:min="10"
+                custom:progressTextSuffix=""/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Delay">
+        <com.lukehorvat.SeekBarDialogPreference
+                android:key="xRotDelay"
+                android:title="Pause Shake Delay"
+                android:dialogMessage="Adjust delay between pauses."
+                android:defaultValue="50"
+                android:max="100"
+                custom:min="10"
+                custom:progressTextSuffix=""/>
+        <com.lukehorvat.SeekBarDialogPreference
+                android:key="yRotDelay"
+                android:title="Volume Shake Delay"
+                android:dialogMessage="Adjust delay between volume changes."
+                android:defaultValue="50"
+                android:max="100"
+                custom:min="10"
+                custom:progressTextSuffix=""/>
+        <com.lukehorvat.SeekBarDialogPreference
+                android:key="zRotDelay"
+                android:title="Song Change Shake Delay"
+                android:dialogMessage="Adjust delay between song changes."
+                android:defaultValue="50"
+                android:max="100"
+                custom:min="10"
+                custom:progressTextSuffix=""/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Magic">
+        <ListPreference
+                android:key="magicPreference"
+                android:title="Type of Magic"
+                android:entries="@array/Particles"
+                android:defaultValue="particle_fire.png"
+                android:entryValues="@array/ParticleData"/>
+        <com.lukehorvat.SeekBarDialogPreference
+                android:key="chaosPreference"
+                android:title="Chaos"
+                android:dialogMessage="Adjust directional randomness."
+                android:defaultValue="15"
+                android:max="50"
+                custom:min="5"
+                custom:progressTextSuffix=""/>
+    </PreferenceCategory>
+</PreferenceScreen>

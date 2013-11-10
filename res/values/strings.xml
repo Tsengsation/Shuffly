@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shuffly</string>
+    <string name="duration">700</string>
+    <string name="offset1">400</string>
+    <string name="offset2">800</string>
+    <string name="offset3">1200</string>
+    <string name="offset4">1600</string>
+    <string-array name="Particles">
+        <item>Smoke Rings</item>
+        <item>Water Drops</item>
+        <item>Magic Dots</item>
+    </string-array>
+
+    <string-array name="ParticleData">
+        <item>"particle_fire.png"</item>
+        <item>"water2.png"</item>
+        <item>"dot.png"</item>
+    </string-array>
+</resources>
