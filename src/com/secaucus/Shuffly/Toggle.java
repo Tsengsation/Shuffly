@@ -220,7 +220,6 @@ public class Toggle extends Activity {
     @Override
     public void onPause(){
         super.onPause();
-        finish();
         if (isReg){
             unregisterReceiver(shuffleUpdate);
             isReg = false;
