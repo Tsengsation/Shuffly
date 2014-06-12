@@ -1,3 +1,3 @@
 Shuffly
 =================
-Music Shuffling Worthy of 2013.
+Music Shuffling Worthy of 2013
