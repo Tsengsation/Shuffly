@@ -28,6 +28,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+import com.secaucus.Shuffly.Toggle;
 
 /**
  * Created with IntelliJ IDEA.
@@ -165,7 +166,7 @@ public class ShuffleService extends Service implements SensorEventListener{
             public void run() {
                 if (sToast != null) { sToast.cancel(); }
                 sToast = Toast.makeText(getApplicationContext(), toaster, Toast.LENGTH_SHORT);
-                sToast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 60);
+                sToast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, Toggle.push);
                 sToast.show();
             }
         });
@@ -359,7 +360,7 @@ public class ShuffleService extends Service implements SensorEventListener{
             .setContentText("Shake to shuffle.")
             .setSmallIcon(R.drawable.ic_stat_device_access_screen_rotation)
             .setContentIntent(pIntent)
-            .setOngoing(true).build();
+            .setOngoing(true).getNotification();
 
         notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(0, note);

@@ -5,18 +5,18 @@ import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.*;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ToggleButton;
+import android.widget.*;
 import de.pocmo.particle.ParticleListActivity;
 import de.pocmo.particle.ParticleViewActivity;
 
@@ -28,6 +28,7 @@ public class Toggle extends Activity {
 
     String[] backgrounds = new String[] {"#5A96A2", "#69A253", "#D78A00", "#C66A6C"};
     View screen;
+    static int push;
 
     /**
      * Called when the activity is first created.
@@ -36,6 +37,10 @@ public class Toggle extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        push = (int) Math.round(metrics.heightPixels * 0.03);
 
         int selection = (int) Math.floor(Math.random() * backgrounds.length);
         screen = findViewById(R.id.main);
@@ -104,15 +109,6 @@ public class Toggle extends Activity {
             }
         });
 
-        Button quitButton = (Button) findViewById(R.id.quit);
-        quitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (toggleState) { onToggle(); };
-                finish();
-            }
-        });
-
         Animation slideLTR = AnimationUtils.loadAnimation(this, R.xml.animations);
         Animation slideLTR2 = AnimationUtils.loadAnimation(this, R.xml.animations2);
         Animation slideLTR3 = AnimationUtils.loadAnimation(this, R.xml.animations3);
@@ -124,6 +120,27 @@ public class Toggle extends Activity {
         helpButton.startAnimation(slideLTR3);
         prefsButton.startAnimation(slideLTR4);
         defaultB.startAnimation(slideLTR5);
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "RobotoCondensed-Regular.ttf");
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView subtitle = (TextView) findViewById(R.id.subtitle);
+
+        title.setTypeface(tf);
+        subtitle.setTypeface(tf);
+        toggleButton.setTypeface(tf);
+        fxButton.setTypeface(tf);
+        helpButton.setTypeface(tf);
+        prefsButton.setTypeface(tf);
+        defaultB.setTypeface(tf);
+
+        /*DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        TextView space = (TextView) findViewById(R.id.space);
+        TextView space1 = (TextView) findViewById(R.id.space1);
+
+        space.setHeight((int) Math.round((float) subtitle.getHeight() / 800f * metrics.heightPixels));
+        space1.setHeight((int) Math.round((float) subtitle.getHeight() / 800f * metrics.heightPixels));*/
 
         if (isShuffleOn()){
             toggleButton.setChecked(true);
@@ -343,7 +360,7 @@ public class Toggle extends Activity {
 
     public void toast(String message){
         Toast toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 60);
+        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, push);
         toast.show();
     }
 

@@ -6,6 +6,13 @@
     <string name="offset2">800</string>
     <string name="offset3">1200</string>
     <string name="offset4">1600</string>
+    <string name="name">Shuffly</string>
+    <string name="reset">Reset Settings</string>
+    <string name="preferences">Preferences</string>
+    <string name="help">Huh? Help!</string>
+    <string name="magic">Magic!</string>
+    <string name="toggle">Toggle</string>
+    <string name="subtitle">Shuffle on Steroids</string>
     <string-array name="Particles">
         <item>Smoke Rings</item>
         <item>Water Drops</item>
